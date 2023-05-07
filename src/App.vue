@@ -1,12 +1,13 @@
 <script setup>
 import TheHeader from './components/TheHeader.vue';
 import TheFooter from './components/TheFooter.vue';
+import MainTodo from './components/MainTodo.vue';
 </script>
 
 <template>
   <div class="wrap">
     <div><TheHeader /></div>
-    <main class="main">メイン</main>
+    <main class="main"><MainTodo /></main>
     <div><TheFooter /></div>
   </div>
 </template>
@@ -17,8 +18,8 @@ import TheFooter from './components/TheFooter.vue';
 .wrap {
   display: flex;
   flex-direction: column;
-  /* <align-items: center;>これがあるとヘッダーの背景色の幅が狭くなる */
-  min-height: 100vh;
+  /* align-items: center;これがあるとヘッダーの背景色の幅が狭くなる */
+  min-height: 91vh;
   width: 370px;
   margin: 0 auto;
   font-family: sans-serif;
