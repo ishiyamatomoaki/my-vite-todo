@@ -224,7 +224,7 @@ iframe {
  */
 
 button,
-input,
+/*input,/*227が影響していそう*/
 optgroup,
 select,
 textarea {
