@@ -33,7 +33,6 @@ const changeCheck = (id) => {
 </script>
 
 <template>
-  <BaseButton>追加</BaseButton>
   <div class="box_input">
     <input
       type="text"
@@ -41,8 +40,10 @@ const changeCheck = (id) => {
       v-model="todoRef"
       placeholder="+ TODOを入力"
     />
-    <button class="btn green" @click="editTodo" v-show="isEditRef">変更</button>
-    <button class="btn" @click="addTodo" v-show="!isEditRef">追加</button>
+    <BaseButton color="green" @on-click="editTodo" v-if="isEditRef"
+      >変更</BaseButton
+    >
+    <BaseButton color="blue" @on-click="addTodo" v-else>追加</BaseButton>
   </div>
   <div class="box_list">
     <div class="todo_list" v-for="todo in todoListRef" :key="todo.id">
@@ -55,8 +56,8 @@ const changeCheck = (id) => {
         /><label>{{ todo.task }}</label>
       </div>
       <div class="btns">
-        <button class="btn green" @click="showTodo(todo.id)">編</button>
-        <button class="btn pink" @click="deleteTodo(todo.id)">削</button>
+        <BaseButton color="green" @on-click="showTodo(todo.id)">編</BaseButton>
+        <BaseButton color="pink" @on-click="deleteTodo(todo.id)">削</BaseButton>
       </div>
     </div>
   </div>
@@ -78,15 +79,6 @@ const changeCheck = (id) => {
   padding: 8px;
   font-size: 18px;
   margin-right: 8px; /*要素の右側の余白（マージン）を8ピクセルに設定する*/
-}
-
-.btn {
-  border-radius: 6px;
-  padding: 6px;
-  font-size: 14px;
-  color: #fff;
-  text-align: center; /*要素内のテキストを中央揃えにする*/
-  background-color: #03a9f4; /*要素の背景色を青色に設定する*/
 }
 
 .box_list {
@@ -118,14 +110,6 @@ const changeCheck = (id) => {
 .btns {
   display: flex;
   gap: 4px;
-}
-
-.green {
-  background-color: #00c853;
-}
-
-.pink {
-  background-color: #ff4081;
 }
 
 .fin {
