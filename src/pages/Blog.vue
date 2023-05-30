@@ -3,7 +3,7 @@ import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const id = ref(route.params.id);
+const id = route.params.id;
 console.log('watch外:', id);
 
 watch(route, () => {
